@@ -66,6 +66,7 @@
             padding: 5px;
             border-radius: 5px;
             outline: none;
+            background: #fff;
         }
 
     </style>
@@ -202,7 +203,7 @@
     function updateCode() {
         let color = ""
         for (let i = 0; i < inputs.length; i++) {
-            color += parseInt(inputs[i].value).toString(16)
+            color += (parseInt(inputs[i].value)<17)?"0"+parseInt(inputs[i].value).toString(16):parseInt(inputs[i].value).toString(16)
         }
         showcode.textContent = `#${color}`
     }
